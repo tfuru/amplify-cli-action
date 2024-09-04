@@ -10,6 +10,7 @@ LABEL "homepage"="https://github.com/ambientlight/amplify-cli-action.git"
 
 LABEL org.opencontainers.image.source=https://github.com/ambientlight/amplify-cli-action
 
+RUN apt-get update && apt-get install -y libvips-dev --no-install-recommends
 RUN npm install --global --unsafe-perm @aws-amplify/cli@latest
 
 COPY entrypoint.sh /entrypoint.sh
